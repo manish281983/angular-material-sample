@@ -1,0 +1,28 @@
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">
+      <svg class="bi bi-bag-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 4h14v10a2 2 0 01-2 2H3a2 2 0 01-2-2V4zm7-2.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
+      </svg>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <div class="navbar-nav mr-auto">
+        <div *ngFor = "let menu of menuList;let i=index">
+          <div class="nav-item active">
+            <div class="nav-link" (click)="menuAction(menu.page)" *ngIf="!menu.subMenuList">{{menu.name}}</div>
+            <div class="nav-item dropdown" *ngIf="menu.subMenuList">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" *ngFor = "let subMenu of menu.subMenuList;">{{subMenu.name}}</a>
+              </div>
+            </div>
+   
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>

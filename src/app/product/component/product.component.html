@@ -1,0 +1,75 @@
+<div class="product-view">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-right">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productDataModal" (click)="OpenProductDataModel()">
+            Create product
+          </button>
+        </div>
+      </div>
+    </div>
+    <mat-form-field>
+      <mat-label>Search Product</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Milk">
+    </mat-form-field>
+    <div class="mat-elevation-z8 product-list-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+       <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+          <td mat-cell *matCellDef="let row">
+            <input type='text' class="product-text" [(ngModel)]="row.price" (blur)="featurePriceAction($event.target.value, row)" />
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+          <td mat-cell *matCellDef="let row"> 
+            <input type='text' class="product-text" [(ngModel)]="row.quantity" (blur)="featureQuantityAction($event.target.value, row)" />
+          </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="discount">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Discount </th>
+          <td mat-cell *matCellDef="let row"> 
+            <input type='text' class="product-text" [(ngModel)]="row.discount" (blur)="featureDiscountAction($event.target.value, row)" />
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="featureProduct">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Feature </th>
+          <td mat-cell *matCellDef="let row"> 
+            <mat-checkbox [(ngModel)]="row.featureProduct" (change)="featureProductAction($event, row)"></mat-checkbox>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="unavailable">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Unavailable </th>
+          <td mat-cell *matCellDef="let row">
+             <mat-checkbox [(ngModel)]="row.unavailable" (change)="unavailableProductAction($event, row)"></mat-checkbox>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-button data-toggle="modal" data-target="#productDataModal" (click)="OpenProductDataModel(row)">More</button>&nbsp;
+            <button mat-button  (click)="deleteDataModel(row)">Delete</button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+    </div>   
+    <div class="modal fade" id="productDataModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <app-update-product [selectedProduct]="selectedProduct"></app-update-product>
+    </div>
+  </div>
+</div>

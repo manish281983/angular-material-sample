@@ -1,0 +1,11 @@
+.navbar {
+    padding-right:30px;
+    padding-left: 30px;
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                cursor: pointer;
+            }
+        }
+    }
+}
