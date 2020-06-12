@@ -1,9 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductComponent } from './product/component/product.component';
 
 const routes: Routes = [ 
-  { path: 'product', component: ProductComponent },
+  { 
+    path: 'product', 
+    loadChildren: './product/product.module#ProductModule',
+    pathMatch: 'full',
+  },
+  { 
+    path: 'tictactoe', 
+    loadChildren: './games/games.module#GamesModule',
+    pathMatch: 'full',
+  },
+  //{ path: 'product', component: ProductComponent },
   { path: '',   redirectTo: '/product', pathMatch: 'full' }
 ];
 

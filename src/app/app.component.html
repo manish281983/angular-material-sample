@@ -1,5 +1,5 @@
 <app-header-component [menuList]="navBar" (menuChangeAction)="redirectPage($event)">
 </app-header-component>
-<div class="master-container">
+<div class="master-container" [ngClass]="checkPage(router.url)? 'master-container-bg': ''">
     <router-outlet></router-outlet>
 </div>

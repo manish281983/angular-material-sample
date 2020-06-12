@@ -9,6 +9,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatCheckboxChange } from '@angular/material';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product',
@@ -30,9 +31,10 @@ export class ProductComponent implements OnInit {
   productList$: Observable<Product[]>;
   public inProgress$: Observable<boolean>;
 
-  constructor( private productFacadeService: ProductFacadeService , private route: ActivatedRoute) {
+  constructor( private titleService: Title, private productFacadeService: ProductFacadeService , private route: ActivatedRoute) {
     this.inProgress$ = this.productFacadeService.inProgress$;
     this.productList$ = this.productFacadeService.productList$;
+      this.titleService.setTitle('Product');
   }
 
   reloadProducts() {

@@ -18,4 +18,8 @@ export class AppComponent implements OnInit {
    console.log(page); 
    this.router.navigate(['/', page]);
   }
+  checkPage(url) {
+    return url.includes('/product');
+  }
+
 }
