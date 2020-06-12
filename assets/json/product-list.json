@@ -1,0 +1,69 @@
+{
+  "productList": [
+    {
+      "deleted": false,
+      "unavailable": false,
+      "featureProduct": true,
+      "id": "d11a3e13-7c5f-4b70-a02a-09e74c8f0152",
+      "price": "4.59",
+      "description": "Do you know all of Spider-man or not? Take this interactive quiz and you will see the results in a matter of a few minutes! Good luck!!",
+      "name": "Snack Factory Organic Pretzel Crisps",
+      "discount": "",
+      "quantity": "12 oz"
+    },
+    {
+      "deleted": false,
+      "unavailable": false,
+      "featureProduct": true,
+      "id": "12ca372c-7cbd-44fc-86a0-dc26f9322101",
+      "price": "19.09",
+      "description": "The Dark Knight has many secrets that you need to uncover in this gk questions quiz",
+      "name": "Cascade, Complete Dawn Fresh Scent Action",
+      "discount": "13.79",
+      "quantity": "47.3 oz"
+   },
+    {
+      "deleted": false,
+      "price": "",
+      "description": " Can you qualify the Incredible HULK quiz?",
+      "id": "9a0ad794-af81-42e3-beb1-c9a723b5a705",
+      "name": "Organic Green Bean",
+      "discount": "",
+      "featureProduct": false,
+      "unavailable": false,
+      "quantity": "47.3 oz"
+    },
+    {
+      "deleted": false,
+      "unavailable": false,
+      "featureProduct": false,
+      "id": "aca751fb-7bcc-4304-a745-99eaf1f4765f",
+      "price": "",
+      "description": "How well do you know about DC Comics' most famous character? Test Your Superhero Knowledge In Our Superman Quiz.",
+      "name": "Amplify Snack Brands Inc Pirate's Booty Aged White Cheddar s",
+      "discount": "8.09",
+      "quantity": "5 oz"
+    },
+    {
+      "deleted": false,
+      "unavailable": false,
+      "featureProduct": true,
+      "id": "8affce15-9dfc-47ac-89c5-f8c941a59033",
+      "price": "20.45",
+      "description": "Do you consider yourself an expert in all things Iron-Man? This Iron Man Quiz will really tickle your brain cells. ",
+      "name": "Duracell Coppertop Alkaline AA Batteries",
+      "discount": "15.59",
+      "quantity": "40 ct"
+    },
+    {
+      "deleted": false,
+      "unavailable": false,
+      "featureProduct": false,
+      "price": "7.19",
+      "description": "Are you an Avengers expert? Test your skills with this extra tricky Marvel quiz!",
+      "id": "d98b5c04-0bce-4500-a936-c6a4d5320ad0",
+      "name": "Sabra Roasted Hummus With Pine Nuts",
+      "discount": "5.19"
+    }
+  ]
+}
