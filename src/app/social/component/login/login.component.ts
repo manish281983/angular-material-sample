@@ -79,9 +79,6 @@ googleLoginClick(){
     this.user = user;
     console.log("user:::",this.user);
     if(this.user){
-      this.loginProfile.patchValue({
-        userName: this.user.email
-      });
       this.loginInfo.email= this.user.email;
       this.loginInfo.photoUrl = this.user.photoUrl;
       this.loginInfo.name = this.user.name;
@@ -101,6 +98,13 @@ facebookLoginClick(){
    this.authService.authState.subscribe((user) => {
     this.user = user;
     console.log("user:::",this.user);
+    if(this.user){
+      this.loginInfo.email= this.user.email;
+      this.loginInfo.photoUrl = this.user.photoUrl;
+      this.loginInfo.name = this.user.name;
+      this.loginSucess = true;
+    }
+   
     
   });
   var b=this.authService.signOut(false); 
