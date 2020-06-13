@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: './games/games.module#GamesModule',
     pathMatch: 'full',
   },
+  { 
+    path: 'login', 
+    loadChildren: './social/social.module#SocialModule',
+    pathMatch: 'full',
+  },
   //{ path: 'product', component: ProductComponent },
   { path: '',   redirectTo: '/product', pathMatch: 'full' }
 ];

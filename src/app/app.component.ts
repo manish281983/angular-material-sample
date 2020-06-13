@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
   navBar: any;
   ngOnInit() {

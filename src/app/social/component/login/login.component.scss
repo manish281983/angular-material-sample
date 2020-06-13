@@ -1,0 +1,15 @@
+.login-view {
+  .login-row {
+    .login-box {
+      border: 1px solid #9C9C9C;
+      background-color: #EAEAEA;
+      .inline-error {
+        color: red;
+      }
+      .register-link {
+        cursor: pointer;
+      }
+    } 
+  } 
+}
+  
