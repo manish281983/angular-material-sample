@@ -6,5 +6,9 @@
     {
         "name": "Tic Tac Toe",
         "page": "tictactoe"
-      }
+    },
+    {
+      "name": "Login",
+      "page": "login"
+    }
   ]
