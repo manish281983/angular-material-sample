@@ -1,10 +1,20 @@
 <div class="login-view container" *ngIf="registrationInfo.isLogin">
-    <h3 class="text-center text-white pt-5">Login form</h3>
     <div class="login-row row justify-content-center align-items-center">
-        <div class="login-column1 col-md-6">
+        <div class="col-md-6">
             <div class="login-box col-md-12">
-                <form [formGroup]="loginProfile" (ngSubmit)="onLoginClick()">
+                <form [formGroup]="loginProfile" (ngSubmit)="onLoginClick()" *ngIf="!loginSucess">
                     <h3 class="text-center text-info">Login</h3>
+                    <div class="row">
+                        <div class="col-sm">
+                            <span  (click)="googleLoginClick()" class="btn btn-block btn-google"> <i class="fa fa-google-plus" aria-hidden="true"></i>   Login via Google</span>
+                        </div>
+                        <div class="col-sm">
+                            <span (click)="facebookLoginClick()" class="btn btn-block btn-facebook"> <i class="fa fa-facebook" aria-hidden="true"></i>   Login via facebook</span>
+                        </div>
+                    </div>
+                    <p class="divider-text">
+                        <span class="divider-or">OR</span>
+                    </p>
                     <div class="form-group">
                         <label for="username" class="text-info">Username:</label><br>
                         <input type="text" formControlName="userName"  class="form-control"
@@ -36,6 +46,25 @@
                         </div>
                     </div>
                 </form>
+                <div *ngIf="loginSucess" class="login-success-view">
+                    <h3 class="text-center text-info">Login Success</h3>
+                    
+                    <div  *ngIf="loginInfo.photoUrl" class="text-center">
+                        <img src="{{loginInfo.photoUrl}}"/>
+                    </div>
+                    <div *ngIf="loginInfo.name" class="row">
+                        <div class="col-sm-6">Name: </div>
+                        <div class="col-sm-6">{{loginInfo.name}}</div>
+                    </div>
+                    <div *ngIf="loginInfo.email" class="row">
+                        <div class="col-sm-6">Email: </div>
+                        <div class="col-sm-6">{{loginInfo.email}}</div>
+                    </div>
+                    <div *ngIf="loginInfo.password" class="row">
+                        <div class="col-sm-6">Password: </div>
+                        <div class="col-sm-6">{{loginInfo.password}}</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
