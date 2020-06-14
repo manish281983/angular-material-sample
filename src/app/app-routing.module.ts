@@ -17,6 +17,11 @@ const routes: Routes = [
     loadChildren: './social/social.module#SocialModule',
     pathMatch: 'full',
   },
+  { 
+    path: 'charts', 
+    loadChildren: './charts/chart.module#ChartModule',
+    pathMatch: 'full',
+  },
   //{ path: 'product', component: ProductComponent },
   { path: '',   redirectTo: '/product', pathMatch: 'full' }
 ];
