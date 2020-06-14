@@ -10,5 +10,9 @@
     {
       "name": "Login",
       "page": "login"
+    },
+    {
+      "name": "Charts",
+      "page": "charts"
     }
   ]
